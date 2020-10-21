@@ -11,8 +11,8 @@ function bacteria(person){
             var sample_values = otu[0].sample_values;
             var otu_ids= otu[0].otu_ids;
             var otu_labels= otu[0].otu_labels;
-            
             console.log(otu_labels)
+            //plot bar
             var trace = {
                 x: otu_ids,
                 y: sample_values,
@@ -58,13 +58,19 @@ function bacteria(person){
             Plotly.newPlot("bubble", data2, layout2);
 
 
-
+//metadata
+//input.metadata for metadata
+            var metadata= input.metadata
+            console.log(metadata)
+            
 
               
         }
     )
     
 }
+// Add event listener for submit button
+//d3.select("#submit").on("click", handleSubmit);
 
 
 //
