@@ -1,5 +1,7 @@
 
 function bacteria(person){
+    d3.event.preventDefault();
+
     D3.json('../../samples.json').then(
         (input)=> {
             var name = input.samples;
@@ -31,8 +33,7 @@ function bacteria(person){
 
             // 8. Plot the chart to a div tag with id "bar"
             Plotly.newPlot("bar", data, layout);
-//metadata
-//input.metadata for metadata
+
 //do plots within the function
             //for the bubble
             var trace2= { 
@@ -60,9 +61,20 @@ function bacteria(person){
 
 //metadata
 //input.metadata for metadata
+//how to write meta within a function with the plots?
             var metadata= input.metadata
             console.log(metadata)
+            //filter??
+            //empty info each time
+            metadata.html("");
+            console.log(metadata)
+
+            // Object.entries(input).forEach(([key,value]){
+            // var row = metadata.append("");
+            // row.text("${key}:${value}")
+        
             
+
 
               
         }
