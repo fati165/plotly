@@ -22,6 +22,11 @@ function bacteria(person){
                 x: otu_ids,
                 y: sample_values,
                 text: otu_labels,
+                marker: {
+                    size: sample_values,
+                    color: otu_ids
+    
+                },
                 type: "bar"
               };
 
@@ -42,13 +47,15 @@ function bacteria(person){
             var trace2= { 
             x: otu_ids,
             y: sample_values,
+            mode: "markers",
             marker: {
                 size: sample_values,
                 color: otu_ids
 
             },
             text: otu_labels,
-            type: "bubble"
+            type: "bubble",
+            symbol: "circle"
             };
 
             var layout2 = {
@@ -58,8 +65,11 @@ function bacteria(person){
                 
             };
             var data2 = [trace2];
+            
  
             Plotly.newPlot("bubble", data2, layout2);
+
+            
 
 //Display the sample metadata, i.e., an individual's demographic information.
 //metadata
